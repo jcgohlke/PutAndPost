@@ -83,6 +83,7 @@ class TodoController {
                 let decodedDictionary = try jsonDecoder.decode([String: Todo].self, from: data)
                 let todos = Array(decodedDictionary.values)
                 self.todos = todos
+                completion(nil)
             } catch {
                 print("Error decoding received data: \(error)")
                 completion(error)
